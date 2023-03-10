@@ -68,6 +68,45 @@ export default function Home() {
             <button className="bg-ggreen text-white transition-all ease-in-out duration-500 px-4 py-2 text-lg hover:translate-y-1">
               <a className="text-white" href="https://forms.gle/8XTH7vGBMmT1SsHh6" target="_blank">Call for Speakers</a>
             </button>
+            {/* <!-- Button to trigger modal --> */}
+                        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Contact us
+                        </button>
+
+                        {/* <!-- Modal for contact us form --> */}
+                        <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div className="modal-dialog">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h1 className="modal-title fs-5" id="exampleModalLabel">Contact us</h1>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div className="modal-body">
+                                        <form className="row g-3">
+                                            <div className="col-md-6">
+                                                <label htmlFor="inputName" className="form-label">Name</label>
+                                                <input type="text" className="form-control" id="inputName" />
+                                            </div>
+                                            <div className="col-md-6">
+                                                <label htmlFor="inputEmail4" className="form-label">Email</label>
+                                                <input type="email" className="form-control" id="inputEmail4" />
+                                            </div>
+                                            <div className="col-12">
+                                                <label htmlFor="inputAddress" className="form-label">Address</label>
+                                                <input type="text" className="form-control" id="inputAddress" placeholder="Enter your address" />
+                                            </div>
+                                            <div className="col-md-6">
+                                                <label htmlFor="inputCity" className="form-label">City</label>
+                                                <input type="text" className="form-control" id="inputCity" />
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div className="modal-footer">
+                                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
           </div>
         </div>
       </div>
