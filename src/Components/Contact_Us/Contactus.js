@@ -8,7 +8,6 @@ export default function Contactus() {
     const [email, setEmail] = useState('');
     const [city, setCity] = useState('');
     const [phone, setPhone] = useState('');
-    const [chapter, setChapter] = useState('');
     const [message, setMessage] = useState('');
 
     // submit event
@@ -16,7 +15,7 @@ export default function Contactus() {
         e.preventDefault();
         // console.log(name, message);
         const data = {
-            Name: name, Email: email, City: city, Phone: phone, Chapter: chapter, Message: message
+            Name: name, Email: email, City: city, Phone: phone, Message: message
         }
         axios.post('https://sheet.best/api/sheets/a22e3255-0b64-4200-871e-390562e69b19',data).then((response)=>{
             console.log(response);
@@ -24,14 +23,13 @@ export default function Contactus() {
             setEmail('');
             setCity('');
             setPhone('');
-            setChapter('');
             setMessage('');
         })
     }
 
     return (
         <div>
-            <button type="button" className="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" className="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Contact Us
             </button>
 
@@ -60,10 +58,6 @@ export default function Contactus() {
                                 <div className="col-md-6">
                                     <label htmlFor="inputphone" className="form-label">Contact No*</label>
                                     <input type="text" className="form-control" id="inputphone" required onChange={(e) => setPhone(e.target.value)} value={phone} />
-                                </div>
-                                <div className="col-12">
-                                    <label htmlFor="inputChapter" className="form-label">GDSC Chapter</label>
-                                    <input type="text" className="form-control" id="inputChapter" placeholder="Enter your GDSC chapter name" onChange={(e) => setChapter(e.target.value)} value={chapter} />
                                 </div>
                                 <div className="col-12">
                                     <label htmlFor="inputMessage" className="form-label">Message*</label>
